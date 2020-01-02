@@ -24,10 +24,10 @@ class Spider1(scrapy.Spider):
         result_list = response.xpath('//div[@class="lk-ergb"][position() > 1]/text()').getall()
         date = response.xpath('//div[@class="lk-dat"]/text()').get()
         yield {
-            'address':address,
-            'name': response.request.meta['name'],
-            'distance': distances,
-            'result_list': result_list,
-            'date': date
+            'Date': date,
+            'Name': response.request.meta['name'],
+            'Distance': distances,
+            'Address': address,
+            'Result_list': result_list
         }
             
